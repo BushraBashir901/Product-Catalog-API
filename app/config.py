@@ -1,0 +1,12 @@
+from pydantic_settings import BaseSettings
+
+class Settings(BaseSettings):
+    DATABASE_URL: str
+    SECRET_KEY: str
+    REDIS_URL: str
+
+    class Config:
+        env_file = ".env"
+
+# Create a settings instance
+settings = Settings()
